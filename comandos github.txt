@@ -1,0 +1,86 @@
+Comandos git hub
+1º git init
+     logar na sua conta do git pelo navegador
+	git config --local user.name "Seu nome aqui"
+	git config --local user.email "seu@email.aqui"
+
+2º git status - mostra os status do diretorio git
+
+3º git add <nome do arquivo> - adiciona apenas um arquivo
+   git add < . > - adiciona todos os arquivos
+
+4º git commit -m "mensagem" - salva os arquivos e descreve oq foi feito 
+
+5º git log - mostra o historico de comites
+   git log --oneline - mostra o historico resumido em uma linha
+   git log -p - mostra todos os detalhes do historico inclusive o que foi alterado
+	https://devhints.io/git-log (para mostrar log's mais detalhados)
+
+6º git config --local - modifica configurações apenas do pc que esta o diretorio
+   git config --global - modica configuração de todos os diretorio local/global(git)
+   git config user.name - mostra a configuração de nome
+   git confi user.email - mostra a configuração do email
+
+OBS: arquivo ".gitignore" ignora uma arquivo ou pasta do projeto
+
+trabalhando em equipe
+crie uma nova pasta chamada servidor
+1º mkdir servidor
+
+2º git init --bare - so vai conter os comits dos arquivos
+	copia o caminho da pasta "C:/Users/marco.antonio/Desktop/github/servidor/"
+
+3º git remote - lista os servidores locais(se tiver servidores mapeados ira mostrar)
+   git remote rename <nome atual> <novo nome> - muda o nome do servidor
+   git remote -v - mostra o caminho do servidor(url/pasta mapeada da rede/ pasta local)
+	OBS: fetch(buscar dados) / push(enviar dados)
+	
+4º git remote add <nome que dará ao servidor> <caminho do servidor>
+   ex - git remote add servidorLocal C:/Users/marco.antonio/Desktop/github/servidor/ <nome da pasta ou projeto a seu criterio>
+
+5º git clone <caminho do servidor> <nome novo da pasta ou projeto a seu criterio>
+	ex: git clone C:/Users/marco.antonio/Desktop/github/servidor/ projeto
+
+6º git push <servidor> <master>- envia os arquivos
+   ex - git push servidor-local master
+
+7º git pull <nome do sevidor> <branch"master">- tras os dados do servidor(apos os dados terem sido clonados)
+
+comando branch -> ramificações do codigo
+git branch - lista os branch
+git branch <nome do branch> - cria um branch
+    ex - git branch front-end 
+git checkout <nome do branch> - troca de branch
+git checkout <nome do branch> -b - cria o branch e ja abre
+git merge <o branch que vc quer unificar>
+git rebase <o branch que vc quer unificar> - opitar por esse pois nn gera um commit a mais
+
+desfazer alterações
+git checkout -- <nome do arquivo ou "." para todos os arquivos>
+	git restore <nome do arquivo>
+desfazer alterações depois de estarem adicionadas para commit
+git restore --staged <nome do arquivo> 
+git restore <nome do arquivo>
+desfazer alterações depois de estarem comitadas
+git log( copia o hash )
+git revert <hash>
+guardando alteração para terminar depois
+altera o arquivo
+git stash
+git stash list - lista todos os arquivos que precisam ser modificados 
+recupera o que esta no stash para voltar a modificar
+git stash list - pega o numero da lista que esta entre chaves
+git stash apply <numero da lista>
+git stash drop
+git stash pop - tras as modificações que precisam serem modificadas
+
+visualizar alterações nos comites
+git diff <hash> .. <hash>
+	ex: git diff 0c0c1d8..218df34
+
+
+
+
+
+
+
